@@ -12,7 +12,7 @@ terraform {
     organization = "nconnectgroup"
 
     workspaces {
-      name = "gh-actions-dev"
+      name = "gh-action-dev"
     }
   }
 }
