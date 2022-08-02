@@ -1,12 +1,8 @@
 terraform {
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-    }
+  backend "remote" {
+   hostname = "app.terraform.io"
+   organization = "nconnectgroup"
   }
-
-  cloud {
-    organization = "nconnectgroup"
 
     workspaces {
       name = "gh-action-dev"
