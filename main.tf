@@ -1,19 +1,18 @@
 terraform {
-  backend "remote" {
-   hostname = "app.terraform.io"
-   organization = "nconnectgroup"
-  }
-
-    workspaces {
-      name = "gh-action-dev"
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+    }
+    random = {
+      source = "hashicorp/random"
     }
   }
 
-  provider "aws" {
-    region = "ap-southeast-1"
-  }
-}
+  cloud {
+    organization = "nconnectgroup"
 
-resource "aws_s3_bucket" "this" {
-  bucket = "test-tf-pipeline"
+    workspaces {
+      name = "gh-actions-dev"
+    }
+  }
 }
