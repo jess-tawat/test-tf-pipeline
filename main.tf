@@ -3,9 +3,6 @@ terraform {
     aws = {
       source = "hashicorp/aws"
     }
-    random = {
-      source = "hashicorp/random"
-    }
   }
 
   cloud {
@@ -14,6 +11,10 @@ terraform {
     workspaces {
       name = "gh-action-dev"
     }
+  }
+
+  provider "aws" {
+    region = "ap-southeast-1"
   }
 }
 
