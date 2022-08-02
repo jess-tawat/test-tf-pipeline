@@ -16,3 +16,12 @@ terraform {
     }
   }
 }
+
+resource "aws_s3_bucket" "this" {
+  bucket = "test-bucket-tf"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
+}
