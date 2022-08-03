@@ -1,3 +1,3 @@
 resource "aws_s3_bucket" "this" {
-  bucket = "tf-jess-exercise"
+  bucket = "tf-jess-exercise-1"
 }
